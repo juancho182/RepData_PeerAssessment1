@@ -452,6 +452,9 @@ ggplot(data=myIntervalData, aes(x=interval, y=avgSteps)) + geom_line()</code></p
 
 tmpOrder[1,1]</code></pre>
 <pre><code>## [1] 835</code></pre>
+<p>The total number of NA rows is listed below</p>
+<pre class="r"><code>length(which(is.na(myData$steps)))</code></pre>
+<pre><code>## [1] 2304</code></pre>
 <p>The strategy for imputing missing data is to replace NA values with the average value for that interval. The dataframe <strong>myNewData</strong> contains the original dataset but replaces NA with the average for its interval (requirement #6).</p>
 <pre class="r"><code>myNewData &lt;- myData
 for(i in 1:nrow(myNewData)) {

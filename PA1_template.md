@@ -108,6 +108,16 @@ tmpOrder[1,1]
 ```
 ## [1] 835
 ```
+The total number of NA rows is listed below
+
+
+```r
+length(which(is.na(myData$steps)))
+```
+
+```
+## [1] 2304
+```
 
 The strategy for imputing missing data is to replace NA values with the average value for that interval. The dataframe **myNewData** contains the original dataset but replaces NA with the average for its interval (requirement #6).
 
@@ -134,7 +144,7 @@ names(myDayData2) <- c("date", "steps")
 hist(myDayData2$steps)
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-11-1.png)<!-- -->
+![](PA1_template_files/figure-html/unnamed-chunk-12-1.png)<!-- -->
 
 Add weekdays and weekends info to  **myNewData** dataframe.
 
@@ -181,4 +191,4 @@ For the panel plot comparing the average number of steps taken per 5-minute inte
 ggplot(data=allAvgs, aes(x=interval, y=avgSteps, group=weekday, color=weekday)) + geom_line()
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-14-1.png)<!-- -->
+![](PA1_template_files/figure-html/unnamed-chunk-15-1.png)<!-- -->

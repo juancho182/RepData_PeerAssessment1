@@ -75,6 +75,11 @@ tmpOrder <- myIntervalData[rev(order(myIntervalData$avgSteps)),]
 
 tmpOrder[1,1]
 ```
+The total number of NA rows is listed below
+
+```{r}
+length(which(is.na(myData$steps)))
+```
 
 The strategy for imputing missing data is to replace NA values with the average value for that interval. The dataframe **myNewData** contains the original dataset but replaces NA with the average for its interval (requirement #6).
 
